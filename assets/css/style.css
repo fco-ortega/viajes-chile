@@ -30,4 +30,10 @@ input {
   height: 100vh;
 }
 
+.card {
+  height: 28em;
+}
 
+.card img {
+  height: 12em;
+}
