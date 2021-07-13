@@ -11,20 +11,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
   <!-- bootstrap 5 -->
-  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
-  <script src="/assets/bootstrap/js/bootstrap.bundle.js"></script>
-  <!-- jquery 3.5 -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- fontawesome 5 -->
-  <script src="https://kit.fontawesome.com/c7402a9b65.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- hoja de estilos -->
   <link rel="stylesheet" href="/assets/css/style.css">
-  <!-- scripts -->
-  <script src="/assets/js/script.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark position-absolute bg-transparent px-2">
+  <!-- Componente Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent px-2">
     <div class="container">
       <a class="navbar-brand" href="">
         <img class="float-start" src="/assets/img/viajes.svg" alt="viajes chile">
@@ -55,7 +50,8 @@
 
   <header id="inicio" class="p-0">
     <div class="container-fluid p-0">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <!-- Carousel Bootstrap JS -->
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="/assets/img/carousel1.jpg" alt="carousel-1">
@@ -81,13 +77,14 @@
     </div>
   </header>
 
-  <section id="quienes-somos" class="bg-dark text-light p-4">
+  <section id="quienes-somos" class="bg-dark text-light p-4 d-none d-lg-block">
     <div class="container">
       <h2 class="text-center border-bottom border-info p-4">Quienes somos</h2>
       <div class="row row-cols-1 row-cols-lg-3 py-4">
         <div class="col">
-          <div class="bg-info p-1 w-100 text-center">
-            <i class="fas fa-plane fs-2"></i>
+          <div class="bg-info p-1 w-100 text-center" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Tooltip on top">
+            <i class="fas fa-plane fa-2x"></i>
           </div>
           <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit qui eveniet, quia porro tenetur
             quasi laborum
@@ -108,12 +105,12 @@
             consectetur adipisicing elit. Saepe, ipsa iste at ea officia expedita tempore harum velit magnam numquam
             impedit ad, suscipit sed veritatis aliquid nostrum exercitationem aspernatur porro.</p>
           <div class="bg-info p-1 w-100 text-center">
-            <i class="fas fa-campground fs-2"></i>
+            <i class="fas fa-campground fa-2x"></i>
           </div>
         </div>
         <div class="col">
           <div class="bg-info p-1 w-100 text-center">
-            <i class="fas fa-road fs-2"></i>
+            <i class="fas fa-road fa-2x"></i>
           </div>
           <p class="py-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, est nam numquam dolore illo
             qui iure
@@ -128,11 +125,12 @@
     </div>
   </section>
 
-  <section id="destacados" class="bg-dark text-light p-4">
-    <div class="container">
-      <h2 class="text-center border-bottom border-info p-4">Destacados</h2>
-      <div class="row row-cols-1 row-cols-lg-4 g-4 p-3">
+  <section id="destacados" class="bg-dark text-light py-4 p-lg-4">
+    <div class="container py-4">
+      <h2 class="text-center border-lg-bottom border-info p-4">Destacados</h2>
+      <div class="row row-cols-1 row-cols-lg-4 g-5 g-lg-4 p-lg-3">
         <div class="col">
+          <!-- Componente Bootstrap Card -->
           <div class="card">
             <img src="/assets/img/card1.jpg" class="card-img-top" alt="card-1">
             <div class="card-body bg-info">
@@ -183,20 +181,58 @@
     </div>
   </section>
 
-  <section id="contacto" class="bg-dark text-light p-4">
+  <section id="contacto" class="bg-dark text-light py-4 p-lg-4">
     <div class="container">
-      <h2 class="text-center border-bottom border-info p-4">Contacto</h2>
-      <div class="typeform-widget" data-url="https://form.typeform.com/to/T32orgLX?typeform-medium=embed-snippet"
+      <h2 class="text-center border-lg-bottom border-info p-4">Contacto</h2>
+      <div class="typeform-widget py-4 p-lg-4"
+        data-url="https://form.typeform.com/to/T32orgLX?typeform-medium=embed-snippet"
         style="width: 100%; height: 500px;"></div>
       <script> (function () { var qs, js, q, s, d = document, gi = d.getElementById, ce = d.createElement, gt = d.getElementsByTagName, id = "typef_orm", b = "https://embed.typeform.com/"; if (!gi.call(d, id)) { js = ce.call(d, "script"); js.id = id; js.src = b + "embed.js"; q = gt.call(d, "script")[0]; q.parentNode.insertBefore(js, q) } })()</script>
     </div>
   </section>
 
-  <footer class="bg-info text-light p-1">
-    <div class="d-flex justify-content-around">
-      <p class="text-uppercase">viajes chile</p>
+  <footer class="bg-info text-light p-3 p-lg-1">
+    <div class="d-lg-flex justify-content-evenly">
+      <p class="text-uppercase text-center fs-2">viajes chile</p>
+      <ul class="list-inline text-center">
+        <li class="list-inline-item">
+          <!-- Tooltips Bootstrap JS -->
+          <a href="#" class="text-light" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Haga click aqui para ver nuestro Github">
+            <i class="fab fa-github-square fa-3x"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="text-light" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Haga click aqui para ver nuestro Linkedin">
+            <i class="fab fa-linkedin fa-3x"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="text-light" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Haga click aqui para ver nuestro Twitter">
+            <i class="fab fa-twitter-square fa-3x"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="text-light" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Haga click aqui para ver nuestro Facebook">
+            <i class="fab fa-facebook-square fa-3x"></i>
+          </a>
+        </li>
+      </ul>
     </div>
-
+    <!-- Se llaman a los scripts de js en el footer para optimizar la carga de la pagina -->
+    <!-- bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <!-- jquery 3.5 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- fontawesome 5 -->
+    <script src="https://kit.fontawesome.com/c7402a9b65.js" crossorigin="anonymous"></script>
+    <!-- scripts -->
+    <script src="/assets/js/script.js"></script>
   </footer>
 </body>
 
